@@ -12,7 +12,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     -->
     <!-- CSS style -->
-    <style></style>
+    <style>
+        /* html element selector */
+        h1 {
+            background-color: chartreuse;
+        }
+        /* id selector*/
+        #welcome{
+            font-style: italic;
+        }
+        /* class selector */
+        .redText {
+            color: red;
+        }
+    </style>
 
     <!--external CSS-->
     <link rel="stylesheet" href="css/site.css">
@@ -20,19 +33,19 @@
     <title>Hello World</title>
 </head>
 <body>
-<!-- Image linked to google-->
+<!-- Day One Homework Image linked to google -->
 <a href="https://www.google.com" target="_blank"><img src="images/smile.png" alt="Go To Google" style="width:80px;height:80px;border:0;"></a>
 <!--content for humans  here -->
-<h1>hello world</h1>
-<h2>Welcome to Codeup</h2>
+<h1>Hello World</h1>
+<h2 id="welcome">Welcome to Codeup</h2>
 <!-- hr tag is horizontal rule and is a void tag-->
 <hr>
-<h3>How to add/commit your work to GitHub</h3>
+<h3 class="redText">How to add/commit your work to GitHub</h3>
 <h4>test for committing to git using command + K</h4>
 <h5>Day one of <a href="http://java.codeup.com" target="_blank">CodeUp</a></h5>
 <h6>smallesth tag is h6 </h6>
 
-<ul>
+<ul class="redText">
     <li>Create a new file ar edit an existing file</li>
     <li>any time you add new work, make a commit</li>
     <li>In intelliJ, make a commit w. Command+K</li>
