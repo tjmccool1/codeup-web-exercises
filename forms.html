@@ -5,38 +5,52 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        div{
+            padding: 5px;
+        }
+
+    </style>
     <title>Register With Us</title>
 </head>
 <body>
-
-    <form method="Post" action="https://hookb.in/KNRm46Pn">
+    <h1>Register With Us</h1>
+    <form method="Get" action="https://hookb.in/vewDeO3e">
+        <!--Email and Password-->
         <div>
             <label for="email">Email</label>
             <input type="text" name="email" id="email">
-            <br>
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
         </div>
+        <!--Bio Text Area-->
         <div>
-            <h4><label for="bio">BIO</label></h4>
-            <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+            <label for="bio">Bio</label>
+            <br>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Introduce Yourself"></textarea>
         </div>
-        <div>
-            <h4>How did you hear about us?</h4>
-            <label for="bilboard">
-                Billboard<input id="bilboard" type="radio" name="referedBy" value="billboard">
-            </label>
-            <label for="radio">
-                Radio<input id="radio" type="radio" name="referedBy" value="radio">
-            </label>
-            <label for="internet">
-                Internet<input id="internet" type="radio" name="referedBy" value="internet">
-            </label>
-            <label for="other">
-                Other<input id="other" type="radio"  name="referedBy" value="other">
-            </label>
+        <!--Radio BTN or CheckBox. CheckBox or different name allows for multiple selection-->
+        <div id="referedBy">
+            <fieldset>
+                <legend> How did you hear about us?</legend>
+                <label for="Bilboard">
+                Billboard<input id="Bilboard" type="radio" name="referedBy" value="Billboard">
+                </label>
+                <br>
+                <label for="Radio">
+                Radio<input id="Radio" type="radio" name="referedBy" value="Radio">
+                </label>
+                <br>
+                <label for="Internet">
+                Internet<input id="Internet" type="radio" name="referedBy" value="Internet">
+                </label>
+                <br>
+                <label for="Other">
+                Other<input id="Other" type="radio"  name="referedBy" value="Other">
+                </label>
+            </fieldset>
         </div>
-        <br>
+        <!--Drop Down selector-->
         <div>
             <label for="browser">Which Browser did you use?</label>
             <select name="browser" id="browser">
@@ -46,7 +60,8 @@
                 <option value="chrome">Chrome</option>
             </select>
         </div>
-        <button type="submit">SUBMIT</button>
+        <!--Submit button or input-->
+        <button type="submit" formtarget="_blank">SUBMIT</button>
     </form>
 
 </body>
