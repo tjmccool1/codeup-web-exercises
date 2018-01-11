@@ -1,0 +1,54 @@
+/*Style for welcome*/
+
+* {
+
+
+}
+
+body {
+    margin-right: 10px;
+    font-family: 'Macondo', cursive;
+    background-color: deepskyblue;
+    background-image: url("../images/smiles_small.png");
+    background-repeat: no-repeat;
+    /*background-image: linear-gradient(deepskyblue,darkolivegreen);*/
+
+
+
+}
+
+header{
+    text-align: center;
+}
+
+h1, h2{
+    color: red;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: circle;
+
+}
+/*Add a style to change the table, table cells td and rows tr padding and font sizes.*/
+table, td, tr {
+    font-size: 2rem;
+    border-style: groove;
+}
+
+/*Add a style to alter the anchor tags and its different states. (e.g. link, visited, hover and active).*/
+a:link {
+    color: #8b0000;
+}
+
+a:hover {
+    background-color: #7fff00;
+}
+
+a:active {
+    color: #000;
+}
+
+/*.fancy-header{*/
+    /*color: purple;*/
+/*}*/

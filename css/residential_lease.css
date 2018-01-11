@@ -1,0 +1,55 @@
+/* Residential Lease*/
+
+body {
+    background: chartreuse;
+}
+
+header {
+    text-align: center;
+}
+
+hr {
+    border-width: thick;
+}
+
+fieldset {
+    border-width: medium;
+}
+
+footer {
+
+}
+/*Transfom text boxes to lines*/
+input[type=text] {
+    background: transparent;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #000000 1px;
+    box-shadow: 0 0 0 ;
+    -webkit-box-shadow: 0 0 0 ;
+}
+
+input[type=date] {
+    border-radius: 5px;
+}
+
+.right-justify {
+    text-align: right;
+    float: right;
+}
+
+.add-space {
+    margin-bottom: 5px;
+}
+
+.blue-button{
+    color: snow;
+    background-color: blue;
+}
+.red-button{
+    ;
+    background-color: red;
+    border-radius: 10px;
+}
