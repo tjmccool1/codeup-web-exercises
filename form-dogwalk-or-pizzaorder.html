@@ -21,11 +21,28 @@
     <title>Order Form</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1>Dog Walker</h1>
+    </header>
     <form>
+        <fieldset>
+            <legend>Your info</legend>
+            <label for="owner">Your Name</label>
+            <input type="text" name="owner" id="owner" placeholder="Last, First">
+            <label for="prefix"></label>
+            <select name="prefix" id="prefix">
+                <option value="mr">Mr.</option>
+                <option value="ms">Ms.</option>
+                <option value="mrs">Mrs.</option>
+            </select>
+            <br>
+            <label>Address</label>
+            <input type="text">
+
+        </fieldset>
         <div>
             <fieldset>
-            <legend>Checkboxes</legend>
+            <legend>Extra Services</legend>
                 <label>
                     <input type="checkbox">
                     <input type="checkbox">
