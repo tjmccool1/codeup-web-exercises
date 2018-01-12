@@ -36,7 +36,8 @@ header>h1{
 /*}*/
 
 #codeup-ribbon{
-    position: absolute;
+    position: fixed;/*keeps in postion even when scrolling*/
+    /*position: absolute;!*needs a to be in a relavant container*!*/
     top: 0;
     right: 0;
 }

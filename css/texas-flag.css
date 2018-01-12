@@ -2,25 +2,39 @@
 
 /*class section*/
 body {
-    background-color: black;
+    background-color: white;
 }
 
 .flag {
-    position: fixed;
+    position: relative;
+    top: 0;
     margin: auto;
     width: 1200px;
     height: 600px;
     border-width: 20px;
     border-color: black;
-    background-color: darkolivegreen;
+    background-color: white;
 
 }
 
 .blue {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: blue;
     height: 100%;
-    width: 30%;
+    width: 40%;
     float: left;
+}
+
+#star {
+    position: absolute;
+    top:30%;
+    left:25%;
+    color: white;;
+    box-sizing: content-box;
+    font-size: 10rem;
 }
 /*code for star from
 https://css-tricks.com/examples/ShapesOfCSS/
@@ -83,13 +97,19 @@ https://css-tricks.com/examples/ShapesOfCSS/
 
 .red {
     background-color: red;
-    height: 50%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 55%;
     width: 100%;
 }
 
 .white {
     background-color: white;
-    height: 50%;
+    poition: fixed;
+    top: 0;
+    right: 0;
+    height: 55%;
     width: 100%;
 }
 
