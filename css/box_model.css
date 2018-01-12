@@ -1,41 +1,37 @@
 /*Box Model Exercise*/
 
-	
-	.box{
-		font-weight: bold;
-		color: white;
-		width:150px;
-		height:50px;
-		border:1px solid black;
-		margin: 10px;
-	}
+	/*class section*/
+    .box{
+        font-weight: bold;
+        color: white;
+        width:150px;
+        height:50px;
+        border:1px solid black;
+        margin: 10px;
+    }
 
-	#bx1 {
-		
-		background-color: red;
-	}
+    /*Id section*/
+    #bx1 {
 
-	#bx2 {
-		background-color: orange;
-		margin-left: 30px;
-	}
-
-	#bx3 {
-		background-color: yellow;
-		margin-left: 60px;
-	}
-
-	#bx4 {
-		background-color: green;
-		margin-left: 90px;
-	}
-
-	#bx5 {
-		background-color: blue;
-		margin-left: 120px;
-	}
-
-	#bx6 {
-		background-color: violet;
-		margin-left: 150px;
-	}
+        background-color: red;
+    }
+    #bx2 {
+        background-color: orange;
+        margin-left: 30px;
+    }
+    #bx3 {
+        background-color: yellow;
+        margin-left: 60px;
+    }
+    #bx4 {
+        background-color: green;
+        margin-left: 90px;
+    }
+    #bx5 {
+        background-color: blue;
+        margin-left: 120px;
+    }
+    #bx6 {
+        background-color: violet;
+        margin-left: 150px;
+    }
