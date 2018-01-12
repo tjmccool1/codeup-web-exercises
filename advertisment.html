@@ -5,6 +5,43 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            text-align: center;
+            width: 1000px;
+            background-color: chartreuse;
+        }
+
+        h1 {
+            text-align: center;
+            color: firebrick;
+            text-align: center;
+        }
+
+        label {
+            font-size: large;
+        }
+        .box{
+            width: 300px;
+            float: left;
+            font-weight: bold;
+            color: #000000000;
+            padding: 50px;
+            border:1px solid black;
+            margin: 10px 300px 0px;
+        }
+
+        .centered {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #item {
+            width: fit-content;
+        }
+
+    </style>
     <!--
     Make a form for making an advertisement. Cursor in title on on page load.
     Title, price, description required. Description should hold lots of text.
@@ -12,13 +49,26 @@
     -->
     <title>ADVERTISMENT</title>
 </head>
-<body>
-    <h2>Buy My Stuff</h2>
-    <hr>
-    <div>
+<body class="centered">
+    <h1>Sell Me Your Stuff</h1>
+    <form method="post" action="">
+        <label for="Item" class="box">Whats for sale <br>
+            <input type="text" name="Item"  id="item">
+        </label>
 
-    </div>
+        <label for="image" class="box">Submit an Image <br>
+            <input type="file"  name="image" id="image"><br>
+            <button type="reset">DELETE</button>
+        </label>
 
+        <label for="price" class="box">How much do you want? $<br>
+        <input type="number" name="price" id="price">
+        </label>
 
+        <label for="description" class="box">Tell me about your stuff.<br>
+        <textarea name="description" id="description" cols="50" rows="40" placeholder="This discription should add value to what you want to sell."></textarea>
+        </label>
+
+    </form>
 </body>
 </html>

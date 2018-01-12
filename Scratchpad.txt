@@ -1,0 +1,31 @@
+<!--WHATS FOR SALE-->
+    <h1>Home For Sale</h1>
+
+    <section>
+<!--Images of Whats for sale-->
+        <a href="https://www.google.com/maps/dir/''/74+Lindsay+Rd,+Beech+Bluff,+TN+38313/@35.6070099,-88.6384334,1048m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x887c19d5fea57bdd:0x49797d7dca136073!2m2!1d-88.634056!2d35.60701" target="_blank"><img src="images/lindsayRd.png" alt="74 Lindsay Rd, Beech Bluff, TN"></a>
+    </section>
+
+
+<!--information about-->
+    <section>
+        <ul>
+            <li>Address - 74 Lindsay Rd, Beech Bluff, TN</li>
+            <li>3 bedrooms</li>
+            <li>2 bathrooms</li>
+            <li>Spacious Kitchen</li>
+            <li>10acres of beautiful privacy</li>
+            <li>partially fenced</li>
+            <li>5acre lake with peninsula</li>
+        </ul>
+    </section>
+    <hr>
+    <section>
+<!--Link to price and registration-->
+        <h3><span>$120,000</span></h3>
+        Register <a href="register.html" target="_blank">here</a> for more information
+    </section>
+    <footer>
+<!--contact info for seller-->
+    <p>If you would like to view this home in-person please click the link above and register</p>
+    </footer>
