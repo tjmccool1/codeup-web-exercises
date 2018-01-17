@@ -1,8 +1,99 @@
+/*css for media queries responsive design*/
+
+
+/*inital setup for mobile*/
+/*@media screen and(max-width:991px) {*/
+    li {
+        display: block;
+        text-align: center;
+        background-color: darkgrey;
+        margin: 10px;
+        padding: 10px;
+
+    }
+
+    .alert-info {
+        padding: 10px;
+        background-color: aqua;
+        text-align: center;
+
+    }
+    .alert-info>a {
+        text-decoration: none;
+        color:black;
+    }
+
+    .nav-links {
+        /*float: right;*/
+        padding: 0;
+    }
+
+    img {
+        height: 224px;
+        width: 339px;
+        margin-left: 10px;
+    }
+#social-media-links {
+    float: right;
+}
+/*}*/
+
+
+
+
+
+
+
+
 /* Small devices (tablets, 768px and up) */
-@media screen and (min-width:768px) { /* ... */ }
+/*@media screen and (min-width:768px) {!*....*!}*/
+
 
 /* Medium devices (desktops, 992px and up) */
-@media screen and (min-width:992px) { /* ... */ }
+@media screen and (min-width:992px) {
+
+    body{
+        margin:0 15% 0 15%;
+        width:890px
+
+    }
+    h1 {
+        float: left;
+    }
+    footer {
+        clear: both;
+    }
+
+    .hidden-on-desktop {
+        visibility: hidden;
+    }
+    .nav-links {
+        float: right;
+    }
+    .nav-links li {
+        float: right;
+        display: inline;
+        background-color: transparent;
+    }
+    .header-img > img {
+        clear: both;
+        width: 890px;
+        height: 385px;
+    }
+    .main {
+        width: 60%;
+        float: left;
+    }
+    .sub-section {
+        width:30%;
+        float: right;
+    }
+    #social-media-links {
+        float: right;
+    }
+
+
+}
 
 /* Large devices (large desktops, 1200px and up) */
-@media screen and (min-width:1200px) { /* ... */ }
+/*@media screen and (min-width:1200px) { !* ... *! }*/
