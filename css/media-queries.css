@@ -1,53 +1,50 @@
 /*css for media queries responsive design*/
 
+/* go check codeup repository for follow up */
 
 /*inital setup for mobile*/
-/*@media screen and(max-width:991px) {*/
-    li {
-        display: block;
-        text-align: center;
-        background-color: darkgrey;
-        margin: 10px;
-        padding: 10px;
+/*reset styles*/
 
-    }
+body {
+    /*...*/
 
-    .alert-info {
-        padding: 10px;
-        background-color: aqua;
-        text-align: center;
+}
 
-    }
-    .alert-info>a {
-        text-decoration: none;
-        color:black;
-    }
+h1 {
+    text-align: center;
+}
 
-    .nav-links {
-        /*float: right;*/
-        padding: 0;
-    }
+.alert-info {
+    padding: 1em;
+    background-color: aqua;
+    text-align: center;
 
-    img {
-        height: 224px;
-        width: 339px;
-        margin-left: 10px;
-    }
+}
+.alert-info>a {
+    text-decoration: none;
+    color:black;
+}
+
+.nav-links {
+    /*float: right;*/
+    padding: 0;
+}
+.nav-links li {
+    display: block;
+    text-align: center;
+    background-color: darkgrey;
+    margin: .5em;
+    padding: 1em;
+}
+
+img {
+    height: 224px;
+    width: 339px;
+    margin-left: 10px;
+}
 #social-media-links {
     float: right;
 }
-/*}*/
-
-
-
-
-
-
-
-
-/* Small devices (tablets, 768px and up) */
-/*@media screen and (min-width:768px) {!*....*!}*/
-
 
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width:992px) {
@@ -71,8 +68,8 @@
         float: right;
     }
     .nav-links li {
-        float: right;
-        display: inline;
+        /*float: right;*/
+        display: inline-block;
         background-color: transparent;
     }
     .header-img > img {
@@ -91,9 +88,6 @@
     #social-media-links {
         float: right;
     }
-
-
 }
 
-/* Large devices (large desktops, 1200px and up) */
-/*@media screen and (min-width:1200px) { !* ... *! }*/
+
