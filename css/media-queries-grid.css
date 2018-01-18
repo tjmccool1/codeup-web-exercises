@@ -1,0 +1,119 @@
+/* CSS for media queries grid layout exercise*/
+
+* {
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+}
+
+#main {
+    text-decoration: none;
+    color: #000;
+}
+.alert-info {
+    padding: 1em;
+    background-color: aqua;
+    text-align: center;
+}
+.alert-info>a {
+    text-decoration: none;
+    color:black;
+}
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+.container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.row {
+    width: 100%;
+    margin-bottom: 1em;
+
+    border-style: dashed;
+    border-color: red;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear:both;
+}
+
+.column {
+    /*border-style: solid;*/
+    box-sizing: border-box;
+    text-align: center;
+    /*background: darkgrey;*/
+    padding: 1em;
+
+    border-style: dotted;
+    border-color: black;
+}
+
+.full
+.one-half,
+.one-third,
+.one-fourth,
+.one-eighth {
+    width: 100%;
+
+}
+
+
+
+@media screen and (min-width: 990px) {
+    .hidden-on-desktop {
+        visibility: hidden;
+    }
+
+    .nav-links {
+        float: right;
+        margin-top: 4em;
+        padding: auto;
+    }
+    .nav-links>li {
+        float: right;
+
+    }
+
+    .column {
+        float: left
+    }
+
+    .full {
+        width: 100%;
+    }
+
+    .one-half {
+        width: 50%;
+
+    }
+    .two-thirds{
+        width: 66.66%
+    }
+
+    .one-third {
+        width: 33.33%;
+
+    }
+
+    .one-fourth {
+        width: 25%;
+    }
+
+    .one-eighth {
+        width: 12.5%
+    }
+
+    #social-media-links{
+        float:right;
+        margin: 1em 0;
+    }
+}
+

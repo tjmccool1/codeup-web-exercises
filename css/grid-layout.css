@@ -1,0 +1,63 @@
+/* CSS for grid layout exercise*/
+
+/*body {
+    box-sizing: border-box;
+}*/
+
+.container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.row {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear:both;
+}
+
+.column {
+    border-style: solid;
+    box-sizing: border-box;
+    text-align: center;
+    background: darkgrey;
+    padding: 1em;
+}
+
+.one-half,
+.one-third,
+.one-fourth,
+.one-eighth {
+    width: 100%;
+
+}
+
+
+
+@media screen and (min-width: 990px) {
+    .column{
+        float:left
+    }
+    .one-half {
+        width: 50%;
+
+    }
+
+    .one-third {
+        width: 33.33%;
+
+
+    }
+    .one-fourth {
+        width: 25%;
+    }
+
+    .one-eighth {
+        width: 12.5%
+    }
+
