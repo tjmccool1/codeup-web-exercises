@@ -25,6 +25,9 @@ img{
     list-style: none;
     padding: 0;
 }
+
+/* grid styling */
+
 .container {
     margin: 0 auto;
     box-sizing: border-box;
@@ -65,7 +68,7 @@ img{
 
 }
 
-
+/* larger screen*/
 
 @media screen and (min-width: 990px) {
     .hidden-on-desktop {
@@ -81,7 +84,7 @@ img{
         float: right;
 
     }
-
+/*grid styling*/
     .column {
         float: left
     }
