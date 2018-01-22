@@ -6,26 +6,329 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <!--Bootstrap local-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 
-    <!-- custom styles go here -->
+<!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- custom styles go here -->
+    <style>
+        header {
+           visibility: hidden;
+        }
+
+        @media screen and (min-width: 500px){
+            header {
+                visibility: visible;
+                background-image: url("images/pizza.png");
+                width: 1323px;
+                height: 346px;
+            }
+            header>div.container{
+                margin: 0;
+                padding: 5em 0 0 0;
+            }
+            h1.jumbotron {
+                text-align: center;
+                opacity: 0.5;
+                padding: 0;
+            }
+            .next{
+                ;
+            }
+
+        }
+    </style>
     <title>Pizza Order Form</title>
 </head>
 <body>
-    <nav class="nav">
-        <a href="">Pizza World</a>
-        <a href="">Order online</a>
-        <a href="">Menu</a>
-        <form action="" method="get">
-            <input type="number">
-            <button type="submit">Search stores near you</button>
-        </form>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Pizza World</a>
+            </div>
 
+<!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+<!--Nav Links-->
+                    <li class="active"><a href="#">Order online <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Menu</a></li>
+<!--Use this for a DropDown-->
+                   <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                         </li>-->
+<!--FORM Zip code search on left side in nav bar-->
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Zip Code">
+                    </div>
+                    <button type="submit" class="btn btn-default">Find stores near you</button>
+                </form>
+<!--Nav Bar Right side-->
+                <ul class="nav navbar-nav navbar-right">
+            <!--Sign up with a glyphicon-->
+                    <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Sign up</a></li>
+            <!--A drop down that was not needed-->
+                    <!--<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>-->
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
     </nav>
+    <header>
+        <div class="container">
+            <h1 class="jumbotron hidden-sm">
+                Welcome to Pizza World!
+            </h1>
+        </div>
+    </header>
+<!--Nav Tabs-->
+    <div>
+        <h2>
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#size-and-crust"><span class="badge">1</span> Size and crust</a></li>
+                <li role="presentation"><a href="#cheese-and-sauce"><span class="badge">2</span> Cheese and sauce</a></li>
+                <li role="presentation"><a href="#toppings"><span class="badge">3</span> Toppings</a></li>
+            </ul>
+        </h2>
+    </div>
 
-<!--BootStrap download script-->
+    <div class="container-fluid">
+<!--Panel 1 Size and Crust-->
+    <div class="panel panel-default panel-primary" id="size-and-crust">
+        <div class="panel-heading">
+            <h4 class="panel-title">Size and Crust</h4>
+        </div>
+            <div class="panel-body">
+<!-- Inside panel 1A-->
+                <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Hand tossed</h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>Garlic-seasoned crust with a rich, buttery taste.</p>
+                        </div>
+        <!--Radio Buttons-->
+                    <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="radio" aria-label="...">
+                            </span>
+                            <input type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                     <input type="radio" aria-label="...">
+                                 </span>
+                                <input type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                </div>
+                </div>
+                <!-- Inside panel 1B-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Hand tossed</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Garlic-seasoned crust with a rich, buttery taste.</p>
+                    </div>
+                    <!--Radio Buttons-->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="radio" aria-label="...">
+                            </span>
+                                <input type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                     <input type="radio" aria-label="...">
+                                 </span>
+                                <input type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div>
+            </div>
+        <div class="panel-footer clearfix">
+<!-- Button Next-->   <button type="submit" class="btn btn-primary pull-right">Next</button>
+        </div>
+    </div>
+    </div>
+<!--Panel 2 Cheese and Sauce-->
+        <div class="panel panel-default panel-primary" id="cheese-and-sauce">
+            <div class="panel-heading">
+                <h4 class="panel-title">Cheese and Sauce</h4>
+            </div>
+            <div class="panel-body">
+            <!-- Inside panel 2A-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Cheese?</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel-info">
+                            <h5>Cheese</h5>
+                        <select class="form-control">
+                            <option>Light</option>
+                            <option>Normal</option>
+                            <option>Extra</option>
+                            <option>Double</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+            <!-- Inside panel 2B-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">sauce?</h4>
+                    </div>
+                    <div class="panel-body">
+                <!--Sauce type-->
+                        <div class="panel-info">
+                            <h5>Sauce</h5>
+                            <select class="form-control">
+                                <option>Tomato sauce</option>
+                                <option>Marinara sauce</option>
+                                <option>BBQ sauce</option>
+                                <option>Alfredo sauce</option>
+                            </select>
+                        </div>
+                <!--Sauce How Much-->
+                        <div class="panel-info">
+                            <h5>How much</h5>
+                            <select class="form-control">
+                                <option>Light</option>
+                                <option>Normal</option>
+                                <option>Extra</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--panel 2 footer-->
+                <div class="panel-footer clearfix">
+                    <!-- Button Next-->   <button type="submit" href="#toppings" class="btn btn-primary pull-right">Next</button>
+                   <!--Button Previous--> <button type="submit" href="#size-and-crust" class="btn btn-primary pull-right">Previous</button>
+                </div>
+        </div>
+<!--Panel 3 Toppings-->
+        <div class="panel panel-default panel-primary" id="toppings">
+            <div class="panel-heading">
+                <h4 class="panel-title">Toppings</h4>
+            </div>
+            <div class="panel-body">
+                <!-- Inside panel 3A-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Choose Meats</h4>
+                    </div>
+                    <div class="panel-body">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Beef
+                                </label>
+                            </div>
+                            <div class="checkbox disabled">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Ham
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Philly Steak
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Bacon
+                                </label>
+                            </div>
+                    </div>
+                </div>
+                <!-- Inside panel 3B-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Choose Non-Meats</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                Green Peppers
+                            </label>
+                        </div>
+                        <div class="checkbox disabled">
+                            <label>
+                                <input type="checkbox" value="">
+                                Mushrooms
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                Onions
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                Jalapeno Peppers
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer clearfix">
+                    <!-- Button Next-->   <button type="submit" class="btn btn-primary pull-right">Check Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--BootStrap download JS-->
     <script src="js/jquery-2.2.4.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
+
+<!--Bootstrap CDN JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
 
 <!-- custom JS goes here -->
 
