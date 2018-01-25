@@ -8,6 +8,18 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
+var name = "joe";
+console.log(name);
+function sayHello (name){
+    // var name = prompt("What is your name?")
+
+    // console.log ("Hello, " + name.charAt(0).toUpperCase() + name.slice(1) + "!");
+    // return alert("Hello, " + name.charAt(0).toUpperCase() + name.slice(1) + "!");
+    return "Hello " + name;
+}
+sayHello(name);
+console.log(sayHello());
+
 
 /**
  * TODO:
@@ -16,13 +28,20 @@
  *
  * console.log 'helloMessage' to check your work
  */
-
+var helloMessage = sayHello();
+console.log(helloMessage);
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+var myName = "thomas";
+console.log(myName)
+sayHello(myName);
+console.log(sayHello(myName));
+
+
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -45,7 +64,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-
+console.log(random);
+function isTwo(random) {
+    random === 2;
+}
+console.log(isTwo())
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -79,3 +102,6 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+
+//return alert ("Hello, " + name.charAt(0).toUpperCase() + name.slice(1) + "!");
