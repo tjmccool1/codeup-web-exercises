@@ -19,67 +19,33 @@ console.log("hello");
 //user Choice
     var userChoice = confirm("Would you like to enter a number?");
     console.log(userChoice);
-    if (userChoice === true) {
+    if (userChoice) {
         var numberChoice = prompt("What Number would you like?");
-    }else {
-        console.log("do nothing");//do nothing
+        if (isNaN(parseFloat(numberChoice))){
+            alert("You must enter a number!")
+        }else {
+                //- whether the number is even or odd
+                     if (numberChoice % 2 === 0) {
+                        alert("your number is even");
+                    } else {
+                        alert("Your number is odd");
+                    }
+
+                //- what the number plus 100 is
+                    alert("Your number plus 100 is " + (parseFloat(numberChoice) + 100));
+
+                //- if the number is negative or positive
+                    if (numberChoice >= 0) {
+                        alert("Your number is positive.");
+                    } else {
+                        alert("your number is negative");
+                    }
+        }
+    }else{
+        console.log(userChoice)
     }
-
-//- whether the number is even or odd
-
-    var evenOdd = (numberChoice % 2 === 0);
-    if (evenOdd) {
-        alert("your number is even");
-    } else {
-        alert("Your number is odd");
-    }
-
-//- what the number plus 100 is
-    var addHundred = (parseInt(numberChoice) + 100);
-    alert("Your number plus 100 is " + addHundred);
-
-//- if the number is negative or positive
-    var negPos = (numberChoice >= 0);
-    if (numberChoice) {
-        alert("Your number is positive.");
-    } else {
-        alert("your number is negative");
-    }
-
 // refactored to use function
-// function choice(number) {
-//     var userChoice = confirm("Would you like to enter a number?");
-//     console.log(userChoice);
-//     if (userChoice === true) {
-//         var numberChoice = prompt("What Number would you like?");
-//     } else {
-//         console.log("do nothing")//do nothing
-//     }
-// }
-//
-// function userInfo(number) {
-//     //- whether the number is even or odd
-//     var evenOdd = (numberChoice % 2 === 0);
-//     if (evenOdd) {
-//         alert("your number is even");
-//     } else {
-//         alert("Your number is odd");
-//     }
-//     //- what the number plus 100 is
-//     var addHundred = (parseInt(numberChoice) + 100);
-//     alert("Your number plus 100 is " + addHundred);
-//
-//     //- if the number is negative or positive
-//     var negPos = (numberChoice >= 0);
-//     if (numberChoice) {
-//         alert("Your number is positive.");
-//     } else {
-//         alert("your number is negative");
-//     }
-//
-// }
-//
-// userInfo(choice());
+
 
 /* ########################################################################## */
 
@@ -251,26 +217,30 @@ console.log(rainbowColors(randomColor));
 var luckyNumber = Math.floor(Math.random() * 6);
  alert ("Your lucky number is " + luckyNumber);
 var totalBill = prompt("What was you bill total?");
+    // if(isNaN(parseFloat(totalBill))){
+    //     alert("you will pay $1,000,000");
+    // }
+
 
 
 function calculateTotal(luckyNumber, totalBill) {
     switch (luckyNumber) {
-        case 0 :
+        case "0" :
             alert("You must pay $" + totalBill);
             break;
-        case 1 :
+        case "1" :
             alert("You must pay $" + (totalBill - (totalBill * 0.1)).toFixed(2));
             break;
-        case 2 :
+        case "2" :
             alert("You must pay $" + (totalBill - (totalBill * 0.25)).toFixed(2));
             break;
-        case 3 :
+        case "3" :
             alert("You must pay $" + (totalBill - (totalBill * 0.35)).toFixed(2));
             break;
-        case 4 :
+        case "4" :
             alert("You must pay $" + (totalBill - (totalBill * 0.50)).toFixed(2));
             break;
-        case 5 :
+        case "5" :
             alert("You must pay $" + (totalBill - (totalBill * 1)).toFixed(2));
             break;
     }
