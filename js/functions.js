@@ -1,5 +1,5 @@
 "use strict";
-
+//todo note for me  - add text to console logs to understand context of answers.
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -61,7 +61,7 @@ console.log(random);
 function isTwo(random){
     // var result = random === 2;
     // return result;
-    return random === 2;
+    return random == 2;
 }
 console.log(isTwo(random));
 /**
@@ -75,8 +75,12 @@ console.log(isTwo(random));
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(a, b){
-    return  a * b;
+function calculateTip(billTotal, tipPercent){
+    if (tipPercent < 0){
+        return  billTotal * tipPercent
+    } else (tipPercent / 100)
+    {
+        return (billTotal * tipPercent);
 }
 console.log(calculateTip(0.20, 20));
 console.log(calculateTip(0.25, 25.50));
@@ -90,7 +94,7 @@ console.log(calculateTip(0.15, 33.42));
  */
 var billTotal = prompt("What is your Bill Total?");
 var tipPercentage = prompt("what percent tip");
-alert("You should tip $" + calculateTip(billTotal, tipPercentage))
+alert("You should tip $" + calculateTip(billTotal, tipPercentage));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -108,4 +112,4 @@ alert("You should tip $" + calculateTip(billTotal, tipPercentage))
 function applyDiscount(a, b){
     return a -(a * b).toFixed(2);
 }
-console.log(applyDiscount(45.99, 0.12));
+console.log(applyDiscount(45.99, 0.12))
