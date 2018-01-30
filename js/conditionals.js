@@ -222,7 +222,7 @@ var totalBill = prompt("What was you bill total?");
     // }
 
 
-
+calculateTotal(luckyNumber, totalBill);
 function calculateTotal(luckyNumber, totalBill) {
     switch (luckyNumber) {
         case "0" :

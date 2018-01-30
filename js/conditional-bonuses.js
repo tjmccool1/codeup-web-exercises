@@ -47,7 +47,46 @@ console.log(daysOftheWeekStartsWithT2("THURSDAY"));
 // 3) Contains at least one upper and one lower case letter
 // 4) Only comprised of letters and numbers
 // 5) EXTRA BONUS: is not the same forwards and backwards   
+var input = prompt("pasword requirements \n " +
+    "1) Must be 6 characters long (only for the sake of this exercise, NOT a best practice)\n" +
+    "2) Contains at least one letter and one number\n" +
+    "3) Contains at least one upper and one lower case letter\n" +
+    "4) Only comprised of letters and numbers\n" +
+    "5) EXTRA BONUS: is not the same forwards and backwards");
+console.log(input);
 
-function isValidPassword() {
-    
+function isValidPassword(input) {
+    var passwordLength = length6(input);
+    var passwordLetterNumber = oneNumberLetter(input);
+    var passwordCase = oneUpperLower(input);
+    var passwordSpecial = specialChar(input);
+    var passwordAnagram = anagram(input);
+
+    return (passwordLength && passwordLetterNumber && passwordCase && passwordSpecial && passwordAnagram);
 }
+//use multiple functions to define varibles in main function
+function length6(input) {
+    console.log(input + " is " + input.length + " characters long.")
+    return (input.length === 6)
+}
+console.log(length6(input));
+
+function oneNumberLetter(input) {
+    return /[a-zA-Z]/.test(input) && /[0-9]/.test(input);
+}
+console.log(oneNumberLetter(input));
+
+function oneUpperLower(input) {
+    return /[a-z]/.test(input) && /[A-Z]/.test(input)
+}
+console.log(oneUpperLower(input));
+
+function specialChar(input) {
+    return !/[a-zA-Z0-9]/.test(input) === false;
+}
+console.log(specialChar(input));
+
+function anagram(input){
+    return input.toLowerCase().split("").reverse().join("") !== input;
+}
+console.log(anagram(input));
