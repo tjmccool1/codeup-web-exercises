@@ -156,8 +156,24 @@
      *      ---
      *      ...
      */
+     //-------------this------------
+    for(var i = 0; i > books.length; i++) {
+        console.log("book# " + (i += 1) + "\n");
+        console.log("title" + books[i].title + "\n");
+        console.log("title" + books[i].author.firstname + " " + books[i].author.lastname + "\n");
+        console.log("-------------" + "\n");
+    }
+// --------- or this---------
     books.forEach(function(book,index){
-        return document.write("Book #" + (index += 1) + "<br>" + "Title: " + book.title  + "<br>" + "Author: " + book.author.firstname +" "+ book.author.lastname + "<br>" + "-----------" + "<br>")
+
+        var output = "";
+        output += "book# " + (index + 1) + "\n";
+        output += "title: " + book.title + "\n";
+        output += "author: " + book.author.firstname + " " + book.author.lastname + "\n";
+        output += "-----------" + "\n"
+        console.log(output);
+// ---------- or  this -------------
+      //  return document.write("Book #" + (index += 1) + "<br>" + "Title: " + book.title  + "<br>" + "Author: " + book.author.firstname +" "+ book.author.lastname + "<br>" + "-----------" + "<br>")
     });
 
 
@@ -181,7 +197,14 @@
     // books.forEach(books.createBook("American Assassian", "Mitch Rapp")(book, index){
     //     return document.write("Book #" + (index += 1) + "<br>" + "Title: " + book.title  + "<br>" + "Author: " + book.author.firstname +" "+ book.author.lastname + "<br>" + "-----------" + "<br>")
     // });
-
-
+    // books.showBookInfo = function(bookUserWants) {
+    //     var bookUserWants;
+    //     books.forEach(function(book,index){
+    //         if (book = bookUserWants){
+    //         return document.write("Your book is Book #" + (index += 1) + "<br>" + "Title: " + book.title  + "<br>" + "Author: " + book.author.firstname +" "+ book.author.lastname + "<br>" + "-----------" + "<br>")
+    //     }
+    // }
+    //     );
+    // books.showBookInfo("Blood Infernal");
 })();
 
