@@ -11,6 +11,18 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    var person = {
+        firstname: "Thomas",
+        lastname: "McCool",
+        // sayHello: function(){
+        //     return ("Hello " + person.firstname + " " +  person.lastname)
+            // }
+        }
+
+
+    console.log(person);
+    console.log(person.firstname);
+    console.log(person.lastname);
 
     /**
      * TODO:
@@ -21,7 +33,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    person.sayHello = function(){
+        return ("Hello " + person.firstname + " " +  person.lastname)
+    }
 
+    console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -36,12 +52,22 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
-
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    console.log(shoppers);
+    function discount(array) {
+        array.forEach(function(shopper){
+            if (shopper.amount >= 200){
+                return document.write("<p>" + shopper.name + "  spent $" + shopper.amount + " apply 12% discount for a total of $" + (shopper.amount-(shopper.amount * 0.12) + "</p>"));
+            }else{
+                return document.write("<p>" + shopper.name + " spent $" + shopper.amount + " Sorry, no discount." + "</p>");
+        }
+        });
+    }
+    discount(shoppers);
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -54,7 +80,58 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books = [
+        {
+            title:"The Adventures of Sherlock Holmes",
+            author: {
+                firstname:"Authur Conan",
+                lastname:"Doyle"
+            }
+        },
+        {
+            title:"Norse Mythology",
+            author: {
+                firstname:"Neil",
+                lastname:"Gaiman"
+            }
+        },
+        {
+            title:"American Assassin",
+            author: {
+                firstname:"Vince",
+                lastname:"Flynn"
+            }
+        },
+        {
+            title:"Blood Infernal",
+            author: {
+                firstname:"James",
+                lastname:"Rollins"
+            }
+        },
+        {
+            title:"Use of Force",
+            author: {
+                firstname:"Brad",
+                lastname:"Thor"
+            }
+        },
+        {
+            title:"The Recruit",
+            author: {
+                firstname:"L.T.",
+                lastname:"Ryan"
+            }
+        }
+    ];
 
+
+    // console.log(books);
+    // console.log(books[5].title);
+    // console.log(books[5].author.firstname);
+    // console.log(books[5].author.lastname);
+    //
+    // console.log(books);
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -79,9 +156,13 @@
      *      ---
      *      ...
      */
+    books.forEach(function(book,index){
+        return document.write("Book #" + (index += 1) + "<br>" + "Title: " + book.title  + "<br>" + "Author: " + book.author.firstname +" "+ book.author.lastname + "<br>" + "-----------" + "<br>")
+    });
+
 
     /**
-     * Bonus:
+     * Bonus:todo
      * - Create a function named `createBook` that accepts a title and author
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
@@ -91,4 +172,16 @@
      *   `showBookInfo` function.
      */
 
+    // books.createBook = function(title, author) {
+    //     this.title.push(title);
+    //     this.author.firstname.push(author.split("|").indexOf([1]).join(""));
+    //     this.author.lastname.push(author.split("|").indexOf([-1]).join(""));
+    //
+    // }
+    // books.forEach(books.createBook("American Assassian", "Mitch Rapp")(book, index){
+    //     return document.write("Book #" + (index += 1) + "<br>" + "Title: " + book.title  + "<br>" + "Author: " + book.author.firstname +" "+ book.author.lastname + "<br>" + "-----------" + "<br>")
+    // });
+
+
 })();
+
