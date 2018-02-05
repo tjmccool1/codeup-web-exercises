@@ -15,13 +15,15 @@
     items and then add them to the HTML of the page. If the user confirms not to add another
     item, end the cycle of user dialogue functions and apply styling to the page using JS only.
     Add Comment</p>
-
+<ul>
+<li></li>
+</ul>
 
 <script>
-    var ul = document.createElement('li');
-    document.body.appendChild('ul');
-    var listItem = document.createElement('li');
-    document.ul.appendChild('li');
+
+    var listItem = document.getElementsByTagName('li');
+    listItem.innerText = "This is a Test";
+
     function addItem(userItem) {
         prompt("Would you like to add an item to the list")
 

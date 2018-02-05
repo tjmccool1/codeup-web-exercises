@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--complete -->
+<!DOCTYPE html><!--complete  X2-->
 <html>
 <head>
     <meta charset="UTF-8">
@@ -30,19 +30,12 @@
 <button id = 'btn4'>Sub Paragraph</button>
 
 <script>
-  // (function() {
+  (function() {
         "use strict";
 
 
 
-      // register changeHeader to handle clicks on btn1
-      document.getElementById('btn1').addEventListener('click', changeHeader, false);
 
-  document.getElementById('btn2').addEventListener('click', subHeader, false);
-
-  document.getElementById('btn3').addEventListener('click', listItems, false);
-
-  document.getElementById('btn4').addEventListener('click', subParagraph, false);
 
   var changeHeader = function (event) {
       // TODO: Uncomment next line and get the main header element by id
@@ -82,7 +75,17 @@
       // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
       subParagraphs[0].innerText = "Mission Accomplished";
   }
-  // })();
+
+      // register changeHeader to handle clicks on btn1
+      document.getElementById('btn1').addEventListener('click', changeHeader, false);
+
+      document.getElementById('btn2').addEventListener('click', subHeader, false);
+
+      document.getElementById('btn3').addEventListener('click', listItems, false);
+
+      document.getElementById('btn4').addEventListener('click', subParagraph, false);
+
+  })();
 </script>
 </body>
 </html>

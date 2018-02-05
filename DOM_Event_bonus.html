@@ -1,10 +1,160 @@
-<!DOCTYPE html>
+<!DOCTYPE html>shed
+<!--not fini-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+
+    <style>
+
+        #stopWatch { width: 280px;
+            height: auto;
+            text-align: center;
+            display: block;
+            padding: 5px;
+            margin: 0 auto;
+        }
+        #timer{
+            width: auto;
+            height: auto;
+            padding: 10px;
+            font-weight: bold;
+            display: block;
+            border: 1px solid #eee;
+            text-align: center;
+            box-shadow: 0 0 5px #ccc;
+            background: #fbfbf0;
+            color: darkblue;
+            border-bottom:4px solid darkgrey;
+        }
+        button {
+            cursor: pointer;
+            font-weight: 700;
+        }
+        /*#fulltime {*/
+            /*display:none;*/
+            /*font-size:16px;*/
+            /*font-weight:bold;*/
+        /*}*/
+
+    </style>
+
+    <title>DOM Event Bonus</title>
 </head>
 <body>
-$END$
+<h2>DOM Event Bonus</h2>
+<div id = aside>
+
+</div>
+
+<div id = "instructions">
+<h4>Create a stop watch app with the following features:</h4>
+<ol>
+    <li>stop watch display that shows the time to the nearest 100th of a second</li>
+    <li>start button to start the stop watch</li>
+    <li>reset button to reset the time to zero</li>
+    <li>pause button to stop the stop watch</li>
+</ol>
+<h4>Additional Features:</h4>
+<ol>
+    <li>store a list of times in an aside div that are appended to every time the reset button is hit</li>
+    <li> add delete buttons for each stored time that removes the time from the aside div</li>
+    <li>add keyboard events to control starting, pausing, and resetting</li>
+</ol>
+</div>
+<section id = "stopWatch">
+    <h1>Stop watch</h1>
+    <p id = "timer"> Time : <span id="seconds">00</span>:<span id="tens">00</span>:<span id = hundreds>00</span></p>
+        <button id = "start"> Start </button>
+        <button id = "stop"> Stop </button>
+        <button id = "reset">Reset</button>
+
+</section>
+
+<script>
+    window.onload = function () {
+
+        var seconds = 00;
+        var tens = 00;
+        var hundreds = 00;
+        var appendHundreds = document.getElementById("hundreds");
+        var appendTens = document.getElementById("tens");
+        var appendSeconds = document.getElementById("seconds");
+        var start = document.getElementById('start');
+        var stop = document.getElementById('stop');
+        var reset = document.getElementById('reset');
+        var Interval ;
+
+        start.onclick = function() {
+
+            clearInterval(Interval);
+            Interval = setInterval(startTimer, 100);
+        }
+
+        stop.onclick = function() {
+            clearInterval(Interval);
+        }
+
+
+        reset.onclick = function() {
+            clearInterval(Interval);
+            hundreds = "00"
+            tens = "00";
+            seconds = "00";
+            appendHundreds.innerHTML = hundreds;
+            appendTens.innerHTML = tens;
+            appendSeconds.innerHTML = seconds;
+        }
+
+
+
+        function startTimer () {
+            //tens++;
+            hundreds++;
+
+            if (hundreds > 9){
+                appendTens.innerHTML = "0" + hundreds;
+            }
+
+            if (hundreds > 9){
+                appendTens.innerHTML =  hundreds;
+            }
+
+            if(tens < 9){
+                appendTens.innerHTML = "0" + tens;
+            }
+
+            if (tens > 9){
+                appendTens.innerHTML = tens;
+
+            }
+
+            if (hundreds > 99) {
+                console.log("hundredths of second");
+                seconds++;
+                appendSeconds.innerHTML = "0" + seconds;
+                tens = 0;
+                appendHundreds.innerHTML = "0" + 0;
+            }
+
+            if (tens > 99) {
+                console.log("seconds");
+                seconds++;
+                appendSeconds.innerHTML = "0" + seconds;
+                tens = 0;
+                appendTens.innerHTML = "0" + 0;
+            }
+
+            if (seconds > 9){
+                appendSeconds.innerHTML = seconds;
+            }
+
+        }
+
+
+    }
+</script>
+
+<!-- where i got my info
+https://codepen.io/cathydutton/pen/GBcvo?editors=1010-->
 </body>
 </html>
