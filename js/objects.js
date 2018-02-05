@@ -230,24 +230,6 @@
         console.log(showBookInfo(book));
     });
 
-//-----------------My Try====================================
-    // books.createBook = function(title, author) {
-    //     this.title.push(title);
-    //     this.author.firstname.push(author.split("|").indexOf([1]).join(""));
-    //     this.author.lastname.push(author.split("|").indexOf([-1]).join(""));
-    //
-    // }
-    // books.forEach(books.createBook("American Assassian", "Mitch Rapp")(book, index){
-    //     return document.write("Book #" + (index += 1) + "<br>" + "Title: " + book.title  + "<br>" + "Author: " + book.author.firstname +" "+ book.author.lastname + "<br>" + "-----------" + "<br>")
-    // });
-    // books.showBookInfo = function(bookUserWants) {
-    //     var bookUserWants;
-    //     books.forEach(function(book,index){
-    //         if (book = bookUserWants){
-    //         return document.write("Your book is Book #" + (index += 1) + "<br>" + "Title: " + book.title  + "<br>" + "Author: " + book.author.firstname +" "+ book.author.lastname + "<br>" + "-----------" + "<br>")
-    //     }
-    // }
-    //     );
-    // books.showBookInfo("Blood Infernal");
+
 })();
 
