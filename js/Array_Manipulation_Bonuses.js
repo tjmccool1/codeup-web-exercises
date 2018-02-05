@@ -1,3 +1,6 @@
+
+//connected to Array_Manipulation_Bonuses.html
+
 // ================================= ARRAY MANIPULATION
 //
 // BONUS 1:
@@ -6,7 +9,7 @@
 //
 // Using multiple functions will be helpful.
 //
-//     input = 5552324343, output = 555-232-4343
+// input = 5552324343, output = 555-232-4343
 // input = 5553434, output = 555-3434
 // input = 18005552323, output = 1-800-555-2323
 //
@@ -23,4 +26,4 @@
 // 4) View all student names in reverse alphabetical order
 // Store the student names in an array. Account for invalid user input.
 
-
+//

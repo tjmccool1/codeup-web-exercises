@@ -1,3 +1,6 @@
+//connected to iteraring_arrays_js.html
+
+
 // === Array Bonuses ===
 //
 // 1. Write a function called average(numbers) that takes in an array of numbers
