@@ -10,18 +10,18 @@
 </head>
 <body>
 
-<h1 id="title"></h1>
+<h1 id="title codeup">jQuery Exercise</h1>
 
 <p id="content" class="codeup">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, dicta earum harum ipsam ipsum magni maiores molestias nesciunt nihil nobis obcaecati pariatur quidem quo repellat saepe sit sunt tempora voluptates.
 </p>
 <div id="div1" class="codeup">
 <ul class="unorderedList" id="listOne codeup">
-    <li id="item1" class="listItems">1</li>
-    <li id="item2" class="listItems">2</li>
-    <li id="item3" class="listItems">3</li>
-    <li id="item4" class="listItems">4</li>
-    <li id="item5" class="listItems">5</li>
+    <li id="item1" class="listItems">1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus atque maiores ut! Ex minus porro qui sequi, similique soluta tenetur! Blanditiis cumque cupiditate doloribus esse et expedita facilis molestiae, praesentium. </li>
+    <li id="item2" class="listItems">2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt nulla obcaecati quia velit voluptatum. Animi, dicta earum magnam maiores natus, numquam omnis, possimus reiciendis reprehenderit rerum tempore tenetur ut vero!</li>
+    <li id="item3" class="listItems">3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eum quaerat recusandae rerum tenetur! Ad amet aperiam corporis dolore eligendi expedita, fugit labore libero officia placeat possimus quia suscipit velit.</li>
+    <li id="item4" class="listItems">4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cum expedita facere itaque, laudantium magni quae quam suscipit ullam. Consequuntur, delectus dolore eius id iste omnis quidem quod quos repellendus.</li>
+    <li id="item5" class="listItems">5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate, eius in libero magni, natus nihil officiis perferendis quis reprehenderit voluptate voluptates. Adipisci eaque est, ipsa nobis quas similique voluptate.</li>
 </ul>
 </div>
 
@@ -35,34 +35,55 @@
     $(document).ready(function() {
         "use strict";
 
-        $('#title').html('jQuery Exercise');
-            // .css({
-            //      'background-color': 'green',
-            //      'margin': '0'
-            //  });
-        $('li').css({'font-size':'20px'});
-        var title = $('h1').html();
-        alert(title);
-        var paragraph = $('p').html();
-        alert(paragraph)
-        var codeup = $('.codeup').text();
-        alert(codeup);
-        $('h1, p ,li').css({
-            'background-color': 'blue'
+        alert('working again');
+
+
+
+        $('h1').click(
+            function(){
+                $(this).css({'background-color':'grey'});
         });
 
-       //  // alert( 'The DOM has finished loading!' );
-       //  $('#title').html('jQuery Exercise').css({
-       //      'background-color': 'green',
-       //      'margin': '0'
+        $('p').dblclick(function(){
+            $(this).css({'font-size':'18px'});
+        });
+
+        $('li').hover(
+            function(){
+                $(this).css({'background-color':'red'});
+        },
+            function(){
+                $(this).css({'background-color':'transparent'});
+        });
+
+        // $('#title').html('jQuery Exercise');
+       //      // .css({
+       //      //      'background-color': 'green',
+       //      //      'margin': '0'
+       //      //  });
+       //  $('li').css({'font-size':'20px'});
+       //  var title = $('h1').html();
+       //  alert(title);
+       //  var paragraph = $('p').html();
+       //  alert(paragraph)
+       //  var codeup = $('.codeup').text();
+       //  alert(codeup);
+       //  $('h1, p ,li').css({
+       //      'background-color': 'blue'
        //  });
        //
-        $('.codeup').css({'border':'solid red 1px'});
-       // //var all = $("body");
-        // console.log(all);
-        // all.css({
-        //     'background-color':'blue'
-        // });
+       // //  // alert( 'The DOM has finished loading!' );
+       // //  $('#title').html('jQuery Exercise').css({
+       // //      'background-color': 'green',
+       // //      'margin': '0'
+       // //  });
+       // //
+       //  $('.codeup').css({'border':'solid red 1px'});
+       // // //var all = $("body");
+       //  // console.log(all);
+       //  // all.css({
+       //  //     'background-color':'blue'
+       //  // });
 
 
     });
