@@ -5,6 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+
+        .highlight{
+            background-color:blue;
+        }
+    </style>
 
     <title>jQuery Exercise</title>
 </head>
@@ -37,23 +43,25 @@
 
         alert('working again');
 
-
+        $('*').click(function(event){
+            $(event.target).toggleClass('highlight');
+        });
 
         $('h1').click(
             function(){
                 $(this).css({'background-color':'grey'});
         });
 
-        $('p').dblclick(function(){
-            $(this).css({'font-size':'18px'});
+        $('p').dblclick(function(event){
+            $(event.target).css({'font-size':'18px'});
         });
 
         $('li').hover(
             function(){
-                $(this).css({'background-color':'red'});
+                $(this).css({'color':'red'});
         },
             function(){
-                $(this).css({'background-color':'transparent'});
+                $(this).css({'color':'black'});
         });
 
         // $('#title').html('jQuery Exercise');
