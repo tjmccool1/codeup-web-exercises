@@ -9,7 +9,21 @@
     <title>jQuery Exercise</title>
 </head>
 <body>
-<h1></h1>
+
+<h1 id="title"></h1>
+
+<p id="content" class="codeup">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, dicta earum harum ipsam ipsum magni maiores molestias nesciunt nihil nobis obcaecati pariatur quidem quo repellat saepe sit sunt tempora voluptates.
+</p>
+<div id="div1" class="codeup">
+<ul class="unorderedList" id="listOne codeup">
+    <li id="item1" class="listItems">1</li>
+    <li id="item2" class="listItems">2</li>
+    <li id="item3" class="listItems">3</li>
+    <li id="item4" class="listItems">4</li>
+    <li id="item5" class="listItems">5</li>
+</ul>
+</div>
 
 
 
@@ -21,8 +35,34 @@
     $(document).ready(function() {
         "use strict";
 
-        alert( 'The DOM has finished loading!' );
-        $('h1').html('jQuery Exercise')
+        $('#title').html('jQuery Exercise');
+            // .css({
+            //      'background-color': 'green',
+            //      'margin': '0'
+            //  });
+        $('li').css({'font-size':'20px'});
+        var title = $('h1').html();
+        alert(title);
+        var paragraph = $('p').html();
+        alert(paragraph)
+        var codeup = $('.codeup').text();
+        alert(codeup);
+        $('h1, p ,li').css({
+            'background-color': 'blue'
+        });
+
+       //  // alert( 'The DOM has finished loading!' );
+       //  $('#title').html('jQuery Exercise').css({
+       //      'background-color': 'green',
+       //      'margin': '0'
+       //  });
+       //
+        $('.codeup').css({'border':'solid red 1px'});
+       // //var all = $("body");
+        // console.log(all);
+        // all.css({
+        //     'background-color':'blue'
+        // });
 
 
     });
