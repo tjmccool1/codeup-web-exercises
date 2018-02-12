@@ -15,11 +15,6 @@
             height: 300px;
             background-color: chartreuse;
         }
-        #map2 {
-            width: 500px;
-            height: 500px;
-            background-color: chartreuse;
-        }
 
     </style>
 
@@ -28,51 +23,68 @@
 <body>
 <h1>Google Map API</h1>
 <!--map -->
-<h2>Alamo lat lng</h2>
+<h2>Alamo</h2>
 <div id="map"></div>
-<h2>Goecode</h2>
-<h4 id="map2Address"></h4>
-<div id="map2">Geocode</div>
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_xNTG2yyRMJbNacB-3Buw4yL3ajy9aYk&callback=initMap"
         type="text/javascript"></script>
 <script>
 
     "use strict";
-///--------Lat lon
-    var mapDisplay = document.getElementById('map');
-    var options = {
-        zoom: 15,
-        center:{
-        lat: 29.425967,
-        lng: -98.486142
-        }
+
+
+    // Set our map options
+    var mapOptions = {
+        // Set the zoom level
+        zoom: 19,
+
+        // This sets the center of the map at our location
+        // center: {
+        //     lat: 29.425967,
+        //     lng: -98.486142
+        // }
     };
-    var map = new google.maps.Map(mapDisplay, options);
 
-//-----------Geocoder-----------
-    var mapDisplay2 = document.getElementById('map2');
+    // Render the map
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    var address = "8718 Snow Goose, San Antonio, TX 78245";
+    // Set our address to geocode
+    var address = "300 Alamo Plaza, San Antonio, TX, 78205";
+
+    // Init geocoder object
     var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({"address": address}, function(results, status){
-        if (status == google.maps.GeocoderStatus.OK){
-            map2.setCenter(results[0].geometry.location);
-        }else{
-            alert("Geocoding was not sucessful - STATUS" + status);
+
+    // Geocode our address
+    geocoder.geocode({ "address": address }, function(results, status) {
+
+        // Check for a successful result
+        if (status == google.maps.GeocoderStatus.OK) {
+
+            // Recenter the map over the address
+            map.setCenter(results[0].geometry.location);
+        } else {
+
+            // Show an error message with the status if our request fails
+            alert("Geocoding was not successful - STATUS: " + status);
         }
     });
 
-    var options2 = {
-        zoom: 15,
-        center:{
-            address:"",
-        }
-    };
+    //map marker info
+    var alamo = { lat: 29.425967, lng: -98.486142 };
 
-    var map2 = new google.maps.Map(mapDisplay2, options2);
+    // Add the marker to our existing map
+    var marker = new google.maps.Marker({
+        position: alamo,
+        map: map
+    });
+    // Create a new infoWindow object with content
+    var infowindow = new google.maps.InfoWindow({
+        content: address + " Changing the world, one programmer at a time."
+    });
 
-
+    // Open the window using our map and marker
+    //infowindow.open(map, marker);
 
 
 

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #map1 {
+            width: 100%;
+            height: 500px;
+            background-color: #1b6d85;
+        }
+        #map2 {
+            width: 100%;
+            height: 500px;
+            background-color: #1b6d85;
+        }
+        #map3 {
+            width: 100%;
+            height: 500px;
+            background-color: #1b6d85;
+        }
+
+    </style>
+    <title>Google Maps API</title>
+</head>
+<body>
+
+<h1>Google Maps API</h1>
+<label>
+<input id="addressInput" name="address" type="text"  value="Back Yard bar-be-cue, 186 Old Hickory Blvd, Jackson, TN 38305">
+</label>
+
+<button id="getAddress" type="submit">search</button>
+<h4 id="address">Back Yard bar-be-cue, 186 Old Hickory Blvd, Jackson, TN 38305</h4>
+
+<h5>zoom: 5</h5>
+<div id="map1"></div>
+<h5>zoom: 15</h5>
+<div id="map2"></div>
+<h5>zoom: 20</h5>
+<div id="map3"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_xNTG2yyRMJbNacB-3Buw4yL3ajy9aYk&callback=initMap"></script>
+
+<script>
+    "use strict";
+
+   // var favRestraunts = [{
+   //         name:"Back Yard bar-be-cue",
+   //         address:"186 Old Hickory Blvd, Jackson, TN 38305"
+   //     },
+   //     {
+   //         name:"Saltgrass Steak House",
+   //         address:"60 North East Loop 410 San Antonio, TX 78216"
+   //     },
+   //     {
+   //         name:"Dixie Grill",
+   //         address:"99-016 Kamehameha Hwy, Ste D, Aiea, Oahu, HI 96701-4111"
+   //     },
+   //     {
+   //         name:"Il Fauno",
+   //         address:"Viale della Pace, 364, 20811 Vicenza, Italy"
+   //     },
+   //     {
+   //         name:"Home",
+   //         address:"8718 Snow Goose, San Antonio, TX 78245"
+   //     }
+   //  ];
+   //  favRestraunts.forEach(function(restraunt){
+   //      favRestraunts.address.forEach(function(address){
+   //          console.log(address);
+   //      });
+   //  });
+
+    // // //text input figure out
+    // var addressInput = document.getElementById("address");
+    // var getAddress = document.getElementById(addressInput);
+    // getAddress.addEventListener("click", function(){
+    //     var address = addressInput.value;
+    //
+    // });
+    var address = "Back Yard bar-be-cue, 186 Old Hickory Blvd, Jackson, TN 38305";
+//MAP 1 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    var mapOptions = {
+        zoom: 1,
+        center: address
+    };
+
+
+    // initalize map
+    var map1 = new google.maps.Map(document.getElementById("map1"), mapOptions);
+
+    // initilize geocoder
+    var geocoder = new google.maps.Geocoder();
+
+
+
+    //googles map api info on geocoder and marker
+//function initMap(address) {
+
+function initMap() {
+
+
+    geocoder.geocode({'address': address}, function (results, status) {
+        // Check for a successful result
+        if (status == 'OK') {
+            // Recenter the map over the address
+            map1.setCenter(results[0].geometry.location);
+
+            // map marker object
+            var marker = new google.maps.Marker({
+                map: map1,
+                //sets a lat lng location for marker
+                position: results[0].geometry.location,
+                //Add drop animation
+                animation: google.maps.Animation.DROP,
+
+            });
+            //info window
+            var infowindow = new google.maps.InfoWindow({
+                content: " Best BBQ is located @ " + "<br>" + address
+            });
+            //add listener for marker
+            //call infowindow with a click
+            marker.addListener('click', function () {
+                infowindow.open(map1, marker);
+            });
+        } else {
+            confirm('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+initMap()
+
+
+// // MAP2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     var mapOptions2 = {
+//         zoom: 15,
+//         center: address
+//     };
+//
+//     // initilize geocoder
+//     var geocoder2 = new google.maps.Geocoder();
+//
+//
+//     //googles map api info on geocoder and marker
+//
+//     geocoder2.geocode( { 'address': address}, function(results, status) {
+//         // Check for a successful result
+//         if (status == 'OK') {
+//             // Recenter the map over the address
+//             map2.setCenter(results[0].geometry.location);
+//             // map marker object
+//             var marker = new google.maps.Marker({
+//                 map: map2,
+//                 position: results[0].geometry.location
+//             });
+//             //info window
+//             var infowindow = new google.maps.InfoWindow({
+//                 content: " Your Gettin' closer to \n" + address
+//             });
+//             infowindow.open(map2, marker);
+//         } else {
+//             alert('Geocode was not successful for the following reason: ' + status);
+//         }
+//     });
+//     var map2 = new google.maps.Map(document.getElementById("map2"), mapOptions2);
+//
+// //MAP3 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     var mapOptions3 = {
+//         zoom: 20,
+//         center: address
+//     };
+//
+//     // initilize geocoder
+//     var geocoder3 = new google.maps.Geocoder();
+//
+//
+//     //googles map api info on geocoder and marker
+//
+//     geocoder3.geocode( { 'address': address}, function(results, status) {
+//         // Check for a successful result
+//         if (status == 'OK') {
+//             // Recenter the map over the address
+//             map3.setCenter(results[0].geometry.location);
+//             // map marker object
+//             var marker = new google.maps.Marker({
+//                 map: map3,
+//                 position: results[0].geometry.location
+//             });
+//             //info window
+//             var infowindow = new google.maps.InfoWindow({
+//                 content: " I bet you can smell the Best BBQ  @ \n" + address
+//             });
+//             infowindow.open(map3, marker);
+//         } else {
+//             alert('Geocode was not successful for the following reason: ' + status);
+//         }
+//     });
+//      var map3 = new google.maps.Map(document.getElementById("map3"), mapOptions3)
+
+
+</script>
+</body>
+</html>
