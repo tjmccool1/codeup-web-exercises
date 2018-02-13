@@ -9,6 +9,9 @@
         h1{
             text-align: center;
         }
+        h2{
+            text-align: center;
+        }
         #background{
             background-image: url("images/d44.jpeg");
             /*background-position: center;*/
@@ -51,7 +54,7 @@
         codeKeys.push( event.keyCode );
     if ( codeKeys.toString().indexOf( konamiCode ) >= 0 ){
         $(document).unbind('keyup');
-        // $('#result').html('<h2>Finally!!!!!!!!!!!!'</h2>);
+         $('#result').html('<h2>Finally!!!!!!!!!!!! <br> You have added 30 lives!!!</h2>');
         // $('#scaryimage').toggleClass('hidden');
         $('#background').toggleClass('toggled');
         setTimeout(function(){

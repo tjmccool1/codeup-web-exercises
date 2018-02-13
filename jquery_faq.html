@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .invisible{
+            display: none;
+        }
+        dt{
+            font-size: 2em;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+    <title>jQuery FAQ</title>
+</head>
+<body>
+<h1>jQuery FAQ Exercise</h1>
+<h2>National Parks FAQ</h2>
+
+<div>
+    <dl>
+        <dt>Park Hours</dt>
+        <dd class="invisible">
+            <table>
+                <tr>
+                <th>DAY</th>
+                <th>Times</th>
+                </tr>
+                <tr>
+                    <td>MON</td>
+                    <td>00:00 - 00:00</td>
+                </tr>
+                <tr>
+                    <td>TUES</td>
+                    <td>00:00 - 00:00</td>
+                </tr>
+                <tr>
+                    <td>WED</td>
+                    <td>00:00 - 00:00</td>
+                </tr>
+                <tr>
+                    <td>THURS</td>
+                    <td>00:00 - 00:00</td>
+                </tr>
+                <tr>
+                    <td>FRI</td>
+                    <td>00:00 - 00:00</td>
+                </tr>
+                <tr>
+                    <td>SAT</td>
+                    <td>00:00 - 00:00</td>
+                </tr>
+                <tr>
+                    <td>SUN</td>
+                    <td>00:00 - 00:00</td>
+                </tr>
+            </table>
+        </dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class="invisible">Answer 1</dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class="invisible">Answer 2</dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class="invisible">Answer 3</dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class=invisible>Answer 4</dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class="invisible">Answer 5</dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class="invisible">Answer 6</dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class="invisible">Answer 7</dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class="invisible">Answer 8</dd>
+
+        <dt>Lorem ipsum dolor sit amet?</dt>
+        <dd class=invisible>Answer 9</dd>
+
+    </dl>
+</div>
+<script src="js/jQuery-2.2.4.js"></script>
+<script>
+  $(document).ready(function() {
+        "use strict";
+        $('dt').click(function(event) {
+            event.preventDefault();
+            $(this).next().toggleClass('invisible');
+            })
+      //bonus
+        $('dt').click(function(event){
+            $(event.target).css({'background-color':"yellow"});
+        })
+
+ });
+</script>
+</body>
+</html>
