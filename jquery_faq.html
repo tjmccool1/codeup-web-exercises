@@ -5,8 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
-        .invisible{
+        .hidden{
             display: none;
         }
         .highlight{
@@ -17,17 +18,50 @@
             text-decoration: underline;
             font-weight: bold;
         }
+        #xClose{
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
     </style>
     <title>jQuery FAQ</title>
 </head>
+
 <body>
+
 <h1>jQuery FAQ Exercise</h1>
 <h2>National Parks FAQ</h2>
+<div id="newsLetterDiv" >
+    <h1> <span id="xClose">x</span>Would you like to sign up for our news letter</h1>
+
+</div>
+<!--effects exercise num3-->
+<!--<div id="register" class="hidden">-->
+    <!--<h2>Please Register</h2>-->
+<!--</div>-->
+
+<!--modal testin-->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>-->
+
+<div id="registerModal" class="text-center modal fade modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <h2>Please Register</h2>
+        </div>
+    </div>
+</div>
+
+<!---->
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Welcome</strong> to the park. Please Register
+</div>
 
 <div>
     <dl>
         <dt>Park Hours</dt>
-        <dd class="invisible">
+        <dd class="hidden">
             <table>
                 <tr>
                 <th>DAY</th>
@@ -65,31 +99,31 @@
         </dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class="invisible">Answer 1</dd>
+        <dd class="hidden">Answer 1</dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class="invisible">Answer 2</dd>
+        <dd class="hidden">Answer 2</dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class="invisible">Answer 3</dd>
+        <dd class="hidden">Answer 3</dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class=invisible>Answer 4</dd>
+        <dd class="hidden">Answer 4</dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class="invisible">Answer 5</dd>
+        <dd class="hidden">Answer 5</dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class="invisible">Answer 6</dd>
+        <dd class="hidden">Answer 6</dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class="invisible">Answer 7</dd>
+        <dd class="hidden">Answer 7</dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class="invisible">Answer 8</dd>
+        <dd class="hidden">Answer 8</dd>
 
         <dt>Lorem ipsum dolor sit amet?</dt>
-        <dd class=invisible>Answer 9</dd>
+        <dd class="hidden">Answer 9</dd>
     </dl>
     <button id="highlight-button">Highlight last item</button>
     <button id="li1">Make the last li in each ul have a yellow background</button>
@@ -120,12 +154,14 @@
 
 </div>
 <script src="js/jQuery-2.2.4.js"></script>
+<!--<script src="js/bootstrap.min.js"></script>-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
         "use strict";
         $('dt').click(function(event) {
             event.preventDefault();
-            $(this).next().toggleClass('invisible');
+            $(this).next().toggleClass('invisible, hidden');
             })
       //bonus
         $('dt').click(function(event){
@@ -174,7 +210,25 @@
       $("li").click(function() {
           $(this).parent().children().first().css('color', 'blue');
       });
+      // Effects exercise \\\\\\\\\
+    $('#xClose').click(function(event){
+        $('#newsLetterDiv').hide()
+    });
+    $('h3').click(function(event){
+        $(this).next().children().slideToggle();
+    })
 
+
+    // setTimeout(function () {
+    //     $('#register').fadeIn(1000);
+    // }, 2000)
+      //hide without css
+      $('#register').hide().delay(8000).fadeIn();
+
+      setTimeout(function () {
+          $('#registerModal').modal('show');
+          //$('#register').modal();
+      }, 3000)
 
 
  });
