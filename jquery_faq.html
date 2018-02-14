@@ -9,8 +9,11 @@
         .invisible{
             display: none;
         }
+        .highlight{
+            background-color: yellow;
+        }
         dt{
-            font-size: 2em;
+            font-size: 1.5em;
             text-decoration: underline;
             font-weight: bold;
         }
@@ -87,8 +90,34 @@
 
         <dt>Lorem ipsum dolor sit amet?</dt>
         <dd class=invisible>Answer 9</dd>
-
     </dl>
+    <button id="highlight-button">Highlight last item</button>
+    <button id="li1">Make the last li in each ul have a yellow background</button>
+    <button id="li2">Another way to make the last li in each ul have a yellow background</button>
+    <h3 id="national-parks-heading">National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+    <h3 id="water-parks">Water Parks</h3>
+    <ul>
+        <li>Six Flags</li>
+        <li>Sea World</li>
+        <li>Schlitterbahn</li>
+        <li>Morgan's Wonderland</li>
+    </ul>
+
 </div>
 <script src="js/jQuery-2.2.4.js"></script>
 <script>
@@ -102,6 +131,51 @@
         $('dt').click(function(event){
             $(event.target).css({'background-color':"yellow"});
         })
+      //Traversing lesson
+      $('#highlight-button').click(function(element){
+          //book info
+          // $('li').each(function(index) {
+          //     if (index % 2 !== 0) {
+          //         $(this).css('background-color', '#FF0');
+          //     }
+          // });
+          // try 1
+          // $('ul').children().last().css('background-color', '#FF0')
+          //try 2
+          //   $('ul').each(function(index,element){
+          //       element.children().last().css('background-color', '#FF0');
+          //   })
+        // try3
+        //   $('li').last().each(function(index, element) {
+        //     {
+        //           $(element).children().last().css('background-color, #FF0');
+        //       }
+        //   });
+          //try 4
+          //$('ul').children().last().css('background-color', '#FF0');
+      })
+        //// copied \\\\\\\\
+      $("#li1").click(function() {
+          $("ul").each(function(index, element) {
+              $(element).children().last().toggleClass('highlight');
+          });
+      });
+      $("#li2").click(function() {
+          $("ul").each(function(index, element) {
+              $(this).children().last().toggleClass('highlight');
+          });
+      });
+      //When any h3 is clicked,
+      // the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+      $("h3").click(function() {
+          $(this).next().children().css('font-weight', 'bold');
+      });
+      // When any list item is clicked, first li of the parent ul should have a font color of blue.
+      $("li").click(function() {
+          $(this).parent().children().first().css('color', 'blue');
+      });
+
+
 
  });
 </script>
